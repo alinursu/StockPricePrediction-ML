@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace MachineLearningModel.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class StockController : ControllerBase
+    [Route("StockController")]
+    public class StockController : Controller
     {
         private static readonly string[] StockNames = GetStockNames();
 
@@ -24,11 +24,17 @@ namespace MachineLearningModel.Controllers
 
             return stockNames;
         }
-
+        [Route("AllStocks")]
         [HttpGet]
         public IEnumerable<string> GetAllStocks()
         {
             return StockNames;
+        }
+        [Route("StockData")]
+        [HttpPost]
+        public IEnumerable<string> GetStockData(string name)
+        {
+            return new string[]{"name","data"};
         }
     }
 }
