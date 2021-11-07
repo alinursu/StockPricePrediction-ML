@@ -12,12 +12,12 @@ namespace MachineLearningModel.Controllers
 
         private static string[] GetStockNames()
         {
-            var fileNames = Directory.GetFiles(".\\Data\\stocks");
+            var fileNames = Directory.GetFiles(".\\StockData\\stocks");
             var stockNames = new string[fileNames.Length];
             var len = 0;
             foreach (var fileName in fileNames)
             {
-                var stock = fileName.Substring(".\\Data\\stocks\\".Length);
+                var stock = fileName.Substring(".\\StockData\\stocks\\".Length);
                 stock = stock.Replace(".csv", "");
                 stockNames[len++] = stock;
             }
