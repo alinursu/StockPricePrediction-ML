@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MachineLearningModel.Controllers
@@ -8,33 +8,35 @@ namespace MachineLearningModel.Controllers
     [Route("StockController")]
     public class StockController : Controller
     {
-        private static readonly string[] StockNames = GetStockNames();
+        private static readonly IEnumerable<string> StockNames = Utils.GetStockNames();
 
-        private static string[] GetStockNames()
-        {
-            var fileNames = Directory.GetFiles(".\\StockData\\stocks");
-            var stockNames = new string[fileNames.Length];
-            var len = 0;
-            foreach (var fileName in fileNames)
-            {
-                var stock = fileName.Substring(".\\StockData\\stocks\\".Length);
-                stock = stock.Replace(".csv", "");
-                stockNames[len++] = stock;
-            }
 
-            return stockNames;
-        }
         [Route("AllStocks")]
         [HttpGet]
-        public IEnumerable<string> GetAllStocks()
+        public IActionResult GetAllStocks()
         {
-            return StockNames;
+            return Ok(StockNames);
         }
+
         [Route("StockData")]
-        [HttpPost]
-        public IEnumerable<string> GetStockData(string name)
+        [HttpGet]
+        public IActionResult GetStockData([FromQuery] string name, [FromQuery] int lines)
         {
-            return new string[]{"name","data"};
+            Console.WriteLine(name);
+            var stockData = Utils.GetStockData(name, lines);
+            if (stockData == null)
+            {
+                return BadRequest("Stock name not found");
+            }
+
+            return Ok(stockData);
+        }
+
+        [Route("StockPrediction")]
+        [HttpPost]
+        public IActionResult GetStockPrediction([FromQuery] string name, [FromQuery] int days)
+        {
+            return Ok("Not implemented");
         }
     }
 }

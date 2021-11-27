@@ -4,23 +4,23 @@ namespace MachineLearningModel
 {
     public class Stock
     {
-        public DateTime Date { get; set; }
-        public float Open { get; set; }
-        public float High { get; set; }
-        public float Low { get; set; }
-        public float Close { get; set; }
-        public float AdjClose { get; set; }
-        public int Volume { get; set; }
+        private DateTime _date;
+        private float _open;
+        private float _high;
+        private float _low;
+        private float _close;
+        private float _adjClose;
+        private int _volume;
 
         public Stock(DateTime date, float open, float high, float low, float close, float adjClose, int volume)
         {
-            Date = date;
-            Open = open;
-            High = high;
-            Low = low;
-            Close = close;
-            AdjClose = adjClose;
-            Volume = volume;
+            _date = date;
+            _open = open;
+            _high = high;
+            _low = low;
+            _close = close;
+            _adjClose = adjClose;
+            _volume = volume;
         }
     }
 }

@@ -12,4 +12,20 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="StockData\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="StockData\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="StockData\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="StockData\**" />
+    </ItemGroup>
+
 </Project>
