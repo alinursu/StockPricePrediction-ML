@@ -27,7 +27,6 @@ namespace MachineLearningModel
             IEnumerable<string> stockData = new List<string>();
             try
             {
-                Console.WriteLine(name);
                 using (var streamReader = new StreamReader(".\\StockData\\stocks\\" + name + ".csv"))
                 {
                     streamReader.ReadLine();
@@ -45,5 +44,6 @@ namespace MachineLearningModel
 
             return stockData;
         }
+        
     }
 }

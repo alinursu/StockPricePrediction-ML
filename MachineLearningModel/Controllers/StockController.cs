@@ -33,10 +33,21 @@ namespace MachineLearningModel.Controllers
         }
 
         [Route("StockPrediction")]
-        [HttpPost]
+        [HttpGet]
         public IActionResult GetStockPrediction([FromQuery] string name, [FromQuery] int days)
         {
-            return Ok("Not implemented");
+            var prediction = Model.LoadModelAndPredict(name, days);
+            if (days < 0)
+            {
+                return BadRequest("The number of days must be a positive number");
+            }
+
+            if (prediction is null)
+            {
+                return BadRequest("Not valid stock name");
+            }
+
+            return Ok(prediction);
         }
     }
 }
