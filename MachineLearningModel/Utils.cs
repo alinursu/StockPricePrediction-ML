@@ -44,6 +44,5 @@ namespace MachineLearningModel
 
             return stockData;
         }
-        
     }
 }

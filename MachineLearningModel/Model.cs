@@ -37,12 +37,11 @@ namespace MachineLearningModel
                 Path.Combine(Environment.CurrentDirectory, "Data", "Models", String.Concat(stock, ".zip")));
         }
 
-        public static IEnumerable<float> LoadModelAndPredict(string stock,int counts)
+        public static IEnumerable<float> LoadModelAndPredict(string stock, int counts)
         {
-            DataViewSchema modelSchema;
             ITransformer trainedModel = _mlContext.Model.Load(
                 Path.Combine(Environment.CurrentDirectory, "Data", "stocks", String.Concat(stock, ".zip")),
-                out modelSchema);
+                out var modelSchema);
             var forecastingEngine = trainedModel.CreateTimeSeriesEngine<StockData, StockPrediction>(_mlContext);
             var forecasts = forecastingEngine.Predict(counts);
             // foreach (var f in forecasts.HighPricePredicted)

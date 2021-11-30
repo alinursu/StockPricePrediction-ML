@@ -2,6 +2,6 @@
 {
     public class StockPrediction
     {
-        public float[] HighPricePredicted { get; set; }
+        public float[] HighPricePredicted;
     }
 }
