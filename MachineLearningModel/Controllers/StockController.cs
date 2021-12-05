@@ -20,10 +20,10 @@ namespace MachineLearningModel.Controllers
 
         [Route("StockData")]
         [HttpGet]
-        public IActionResult GetStockData([FromQuery] string name, [FromQuery] int lines)
+        public IActionResult GetStockData([FromQuery] string name, [FromQuery] int days)
         {
             Console.WriteLine(name);
-            var stockData = Utils.GetStockData(name, lines);
+            var stockData = Utils.GetStockHighPrice(name, days);
             if (stockData == null)
             {
                 return BadRequest("Stock name not found");

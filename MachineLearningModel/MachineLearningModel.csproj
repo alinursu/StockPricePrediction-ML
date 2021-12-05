@@ -20,15 +20,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Remove="StockData\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="StockData\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="StockData\**" />
       <None Update="Data\etfs\BAB.csv">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
@@ -359,15 +350,232 @@
       <None Update="Data\etfs\CCOR.csv">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Remove="Data\**" />
     </ItemGroup>
 
     <ItemGroup>
-      <Content Remove="StockData\**" />
+      <Content Include="StockData\.idea\.idea.Data.dir\.idea\encodings.xml">
+        <Link>Data\StockData\.idea\.idea.Data.dir\.idea\encodings.xml</Link>
+      </Content>
+      <Content Include="StockData\.idea\.idea.Data.dir\.idea\indexLayout.xml">
+        <Link>Data\StockData\.idea\.idea.Data.dir\.idea\indexLayout.xml</Link>
+      </Content>
+      <Content Include="StockData\.idea\.idea.Data.dir\.idea\projectSettingsUpdater.xml">
+        <Link>Data\StockData\.idea\.idea.Data.dir\.idea\projectSettingsUpdater.xml</Link>
+      </Content>
+      <Content Include="StockData\.idea\.idea.Data.dir\.idea\workspace.xml">
+        <Link>Data\StockData\.idea\.idea.Data.dir\.idea\workspace.xml</Link>
+      </Content>
+      <Content Include="StockData\etfs\AAAU.csv">
+        <Link>Data\StockData\etfs\AAAU.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AADR.csv">
+        <Link>Data\StockData\etfs\AADR.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AAXJ.csv">
+        <Link>Data\StockData\etfs\AAXJ.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ABEQ.csv">
+        <Link>Data\StockData\etfs\ABEQ.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ACES.csv">
+        <Link>Data\StockData\etfs\ACES.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ACIO.csv">
+        <Link>Data\StockData\etfs\ACIO.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ACSG.csv">
+        <Link>Data\StockData\etfs\ACSG.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ACSI.csv">
+        <Link>Data\StockData\etfs\ACSI.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ACT.csv">
+        <Link>Data\StockData\etfs\ACT.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ACWF.csv">
+        <Link>Data\StockData\etfs\ACWF.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ACWI.csv">
+        <Link>Data\StockData\etfs\ACWI.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ACWV.csv">
+        <Link>Data\StockData\etfs\ACWV.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ACWX.csv">
+        <Link>Data\StockData\etfs\ACWX.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ADME.csv">
+        <Link>Data\StockData\etfs\ADME.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ADRE.csv">
+        <Link>Data\StockData\etfs\ADRE.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AESR.csv">
+        <Link>Data\StockData\etfs\AESR.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AFIF.csv">
+        <Link>Data\StockData\etfs\AFIF.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AFK.csv">
+        <Link>Data\StockData\etfs\AFK.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AFLG.csv">
+        <Link>Data\StockData\etfs\AFLG.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AFMC.csv">
+        <Link>Data\StockData\etfs\AFMC.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AFSM.csv">
+        <Link>Data\StockData\etfs\AFSM.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AFTY.csv">
+        <Link>Data\StockData\etfs\AFTY.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AGG.csv">
+        <Link>Data\StockData\etfs\AGG.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AGGP.csv">
+        <Link>Data\StockData\etfs\AGGP.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AGGY.csv">
+        <Link>Data\StockData\etfs\AGGY.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AGND.csv">
+        <Link>Data\StockData\etfs\AGND.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AGQ.csv">
+        <Link>Data\StockData\etfs\AGQ.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AGT.csv">
+        <Link>Data\StockData\etfs\AGT.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AGZ.csv">
+        <Link>Data\StockData\etfs\AGZ.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AGZD.csv">
+        <Link>Data\StockData\etfs\AGZD.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AIA.csv">
+        <Link>Data\StockData\etfs\AIA.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AIEQ.csv">
+        <Link>Data\StockData\etfs\AIEQ.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AIIQ.csv">
+        <Link>Data\StockData\etfs\AIIQ.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AIQ.csv">
+        <Link>Data\StockData\etfs\AIQ.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AIRR.csv">
+        <Link>Data\StockData\etfs\AIRR.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ALFA.csv">
+        <Link>Data\StockData\etfs\ALFA.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ALTS.csv">
+        <Link>Data\StockData\etfs\ALTS.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ALTY.csv">
+        <Link>Data\StockData\etfs\ALTY.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AMCA.csv">
+        <Link>Data\StockData\etfs\AMCA.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AMLP.csv">
+        <Link>Data\StockData\etfs\AMLP.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AMOM.csv">
+        <Link>Data\StockData\etfs\AMOM.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AMZA.csv">
+        <Link>Data\StockData\etfs\AMZA.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ANGL.csv">
+        <Link>Data\StockData\etfs\ANGL.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AOA.csv">
+        <Link>Data\StockData\etfs\AOA.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AOK.csv">
+        <Link>Data\StockData\etfs\AOK.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AOM.csv">
+        <Link>Data\StockData\etfs\AOM.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AOR.csv">
+        <Link>Data\StockData\etfs\AOR.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ARCM.csv">
+        <Link>Data\StockData\etfs\ARCM.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ARGT.csv">
+        <Link>Data\StockData\etfs\ARGT.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ARKF.csv">
+        <Link>Data\StockData\etfs\ARKF.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ARKG.csv">
+        <Link>Data\StockData\etfs\ARKG.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ARKK.csv">
+        <Link>Data\StockData\etfs\ARKK.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ARKQ.csv">
+        <Link>Data\StockData\etfs\ARKQ.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ARKW.csv">
+        <Link>Data\StockData\etfs\ARKW.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ARMR.csv">
+        <Link>Data\StockData\etfs\ARMR.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ASEA.csv">
+        <Link>Data\StockData\etfs\ASEA.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ASET.csv">
+        <Link>Data\StockData\etfs\ASET.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ASHR.csv">
+        <Link>Data\StockData\etfs\ASHR.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ASHS.csv">
+        <Link>Data\StockData\etfs\ASHS.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\ASHX.csv">
+        <Link>Data\StockData\etfs\ASHX.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AUSF.csv">
+        <Link>Data\StockData\etfs\AUSF.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AVDE.csv">
+        <Link>Data\StockData\etfs\AVDE.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AVDV.csv">
+        <Link>Data\StockData\etfs\AVDV.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AVEM.csv">
+        <Link>Data\StockData\etfs\AVEM.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AVUS.csv">
+        <Link>Data\StockData\etfs\AVUS.csv</Link>
+      </Content>
+      <Content Include="StockData\etfs\AVUV.csv">
+        <Link>Data\StockData\etfs\AVUV.csv</Link>
+      </Content>
+      <Content Include="StockData\symbols_valid_meta.csv">
+        <Link>Data\StockData\symbols_valid_meta.csv</Link>
+      </Content>
+      <Content Remove="Data\**" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Data\Models" />
-      <Folder Include="Data\Transformers" />
+      <Compile Remove="Data\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Data\**" />
     </ItemGroup>
 
 </Project>

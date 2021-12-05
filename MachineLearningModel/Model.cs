@@ -21,7 +21,7 @@ namespace MachineLearningModel
             MessageId = "type: System.Reflection.CustomAttributeNamedParameter[]; size: 245MB")]
         public static void CreateAndSaveModel(string stock)
         {
-            var dataPath = Path.Combine(Environment.CurrentDirectory, "Data", "stocks", String.Concat(stock, ".csv"));
+            var dataPath = Path.Combine(Environment.CurrentDirectory, "StockData", "stocks", String.Concat(stock, ".csv"));
             Console.WriteLine(dataPath);
             var data = _mlContext.Data.LoadFromTextFile<StockData>(dataPath, hasHeader: true, separatorChar: ',');
             var pipeline = _mlContext.Forecasting.ForecastBySsa(
@@ -34,13 +34,13 @@ namespace MachineLearningModel
                 confidenceLevel: .98f);
             var model = pipeline.Fit(data);
             _mlContext.Model.Save(model, data.Schema,
-                Path.Combine(Environment.CurrentDirectory, "Data", "Models", String.Concat(stock, ".zip")));
+                Path.Combine(Environment.CurrentDirectory, "StockData", "Models", String.Concat(stock, ".zip")));
         }
 
         public static IEnumerable<float> LoadModelAndPredict(string stock, int counts)
         {
             ITransformer trainedModel = _mlContext.Model.Load(
-                Path.Combine(Environment.CurrentDirectory, "Data", "stocks", String.Concat(stock, ".zip")),
+                Path.Combine(Environment.CurrentDirectory, "StockData", "stocks", String.Concat(stock, ".zip")),
                 out var modelSchema);
             var forecastingEngine = trainedModel.CreateTimeSeriesEngine<StockData, StockPrediction>(_mlContext);
             var forecasts = forecastingEngine.Predict(counts);
