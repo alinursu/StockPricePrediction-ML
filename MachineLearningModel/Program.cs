@@ -7,8 +7,8 @@ namespace MachineLearningModel
     {
         public static void Main(string[] args)
         {
-            // Model.CreateAllModels();
-            CreateHostBuilder(args).Build().Run();
+            Model.CreateAllModels();
+            // CreateHostBuilder(args).Build().Run();
         }
 
 

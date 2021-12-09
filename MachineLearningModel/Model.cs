@@ -54,9 +54,14 @@ namespace MachineLearningModel
 
         public static void CreateAllModels()
         {
-            var files = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, "Data", "stocks"));
+            var files = Directory.GetFiles(Path.Combine(Environment.CurrentDirectory, "StockData", "stocks"));
             foreach (var file in files)
             {
+                if (file.Contains(".zip"))
+                {
+                    File.Delete(file);
+                    continue;
+                }
                 var stock = file.Replace(".csv", "");
                 Model.CreateAndSaveModel(stock);
             }
