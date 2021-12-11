@@ -33,7 +33,7 @@ namespace MachineLearningModel.Controllers
             var date = DateTime.Today;
             foreach (var value in stockData)
             {
-                stockDataWithDate.Add(date.ToString("dd/MM/yyyy"), value);
+                stockDataWithDate.Add(date.ToString("MM/dd/yyyy"), value);
                 date = date.AddDays(-1);
             }
 
@@ -60,7 +60,7 @@ namespace MachineLearningModel.Controllers
             foreach (var value in prediction)
             {
                 date = date.AddDays(1);
-                stockDataWithDate.Add(date.ToString("dd/MM/yyyy"), value);
+                stockDataWithDate.Add(date.ToString("MM/dd/yyyy"), value);
             }
 
             return Ok(stockDataWithDate);
