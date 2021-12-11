@@ -23,13 +23,21 @@ namespace MachineLearningModel.Controllers
         public IActionResult GetStockData([FromQuery] string name, [FromQuery] int days)
         {
             Console.WriteLine(name);
+            Dictionary<string, string> stockDataWithDate = new Dictionary<string, string>();
             var stockData = Utils.GetStockHighPrice(name, days);
             if (stockData == null)
             {
                 return BadRequest("Stock name not found");
             }
 
-            return Ok(stockData);
+            var date = DateTime.Today;
+            foreach (var value in stockData)
+            {
+                stockDataWithDate.Add(date.ToString("dd/MM/yyyy"), value);
+                date = date.AddDays(-1);
+            }
+
+            return Ok(stockDataWithDate);
         }
 
         [Route("StockPrediction")]
@@ -37,6 +45,7 @@ namespace MachineLearningModel.Controllers
         public IActionResult GetStockPrediction([FromQuery] string name, [FromQuery] int days)
         {
             var prediction = Model.LoadModelAndPredict(name, days);
+            Dictionary<string, float> stockDataWithDate = new Dictionary<string, float>();
             if (days < 0)
             {
                 return BadRequest("The number of days must be a positive number");
@@ -47,7 +56,14 @@ namespace MachineLearningModel.Controllers
                 return BadRequest("Not valid stock name");
             }
 
-            return Ok(prediction);
+            var date = DateTime.Today;
+            foreach (var value in prediction)
+            {
+                date = date.AddDays(1);
+                stockDataWithDate.Add(date.ToString("dd/MM/yyyy"), value);
+            }
+
+            return Ok(stockDataWithDate);
         }
     }
 }

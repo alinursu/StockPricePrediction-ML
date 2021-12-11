@@ -45,7 +45,7 @@ namespace MachineLearningModel
             return stockData;
         }
 
-        public static object GetStockHighPrice(string name, int days)
+        public static IEnumerable<string> GetStockHighPrice(string name, int days)
         {
             List<string> text = File.ReadLines(".\\StockData\\stocks\\" + name + ".csv").Reverse().Take(days).ToList();
             return text.Select(l => l.Split(",")[2]).Reverse();
