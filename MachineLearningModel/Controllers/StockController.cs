@@ -22,7 +22,6 @@ namespace MachineLearningModel.Controllers
         [HttpGet]
         public IActionResult GetStockData([FromQuery] string name, [FromQuery] int days)
         {
-            Console.WriteLine(name);
             Dictionary<string, string> stockDataWithDate = new Dictionary<string, string>();
             var stockData = Utils.GetStockHighPrice(name, days);
             if (stockData == null)

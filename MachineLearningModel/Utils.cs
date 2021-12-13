@@ -47,8 +47,16 @@ namespace MachineLearningModel
 
         public static IEnumerable<string> GetStockHighPrice(string name, int days)
         {
-            List<string> text = File.ReadLines(".\\StockData\\stocks\\" + name + ".csv").Reverse().Take(days).ToList();
-            return text.Select(l => l.Split(",")[2]).Reverse();
+            try
+            {
+                List<string> text = File.ReadLines(".\\StockData\\stocks\\" + name + ".csv").Reverse().Take(days)
+                    .ToList();
+                return text.Select(l => l.Split(",")[2]).Reverse();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }
