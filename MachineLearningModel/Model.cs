@@ -24,7 +24,6 @@ namespace MachineLearningModel
         {
             var dataPath = Path.Combine(Environment.CurrentDirectory, "StockData", "stocks",
                 String.Concat(stock, ".csv"));
-            Console.WriteLine(dataPath);
             var trainSize = File.ReadLines(dataPath).Count() - 1;
             var data = _mlContext.Data.LoadFromTextFile<StockData>(dataPath, hasHeader: true, separatorChar: ',');
             var pipeline = _mlContext.Forecasting.ForecastBySsa(
@@ -47,11 +46,6 @@ namespace MachineLearningModel
                 out var modelSchema);
             var forecastingEngine = trainedModel.CreateTimeSeriesEngine<StockData, StockPrediction>(_mlContext);
             var forecasts = forecastingEngine.Predict(counts);
-            // foreach (var f in forecasts.HighPricePredicted)
-            // {
-            //     Console.WriteLine(f);
-            // }
-
             return forecasts.HighPricePredicted;
         }
 
@@ -79,6 +73,7 @@ namespace MachineLearningModel
                     }
                     catch (Exception e)
                     {
+                        Console.WriteLine(e.Message);
                         File.Delete(file);
                     }
                 }

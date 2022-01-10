@@ -38,7 +38,7 @@ namespace MachineLearningModel
             }
             catch (FileNotFoundException e)
             {
-                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e.Message);
                 return null;
             }
 
@@ -55,6 +55,7 @@ namespace MachineLearningModel
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 return null;
             }
         }
